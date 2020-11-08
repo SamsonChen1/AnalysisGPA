@@ -1,53 +1,41 @@
-import csv
 import logging
 
 logging.basicConfig(format='%(asctime)-15s:  %(message)s', level=logging.INFO)
 
+letter = {
+    "A+": 4.0,
+    "A": 4.0,
+    "A-": 3.7,
+    "B+": 3.3,
+    "B": 3,
+    "B-": 2.7,
+    "C+": 2.3,
+    "C": 2.0,
+    "C-": 1.7,
+    "D+": 1.3,
+    "D": 1.0,
+    "D-": .7,
+    "F": 0
+}
+
 class Course:
-    letter = {
-        "A+": 4.0,
-        "A": 4.0,
-        "A-": 3.7,
-        "B+": 3.3,
-        "B": 3,
-        "B-": 2.7,
-        "C+": 2.3,
-        "C": 2.0,
-        "C-": 1.7,
-        "D+": 1.3,
-        "D": 1.0,
-        "D-": .7,
-        "F": 0
-    }
+    def __init__(self, term, class_code, class_name, class_type, points, grade):
+        self.term = term
+        self.class_code = class_code
+        self.class_name = class_name
+        self.class_type = class_type
+        self.points = points
+        self.grade = self.convert_gpa_letter_to_num(grade)
 
-    def __init__(self, file_name):
-        self.file_name = file_name
-
-    def get_transcript_content(self) -> list:
-        transcript = []
-        with open(self.file_name, newline='') as f:
-            csv_content = csv.reader(f)
-            next(f)
-            for row in csv_content:
-                transcript.append({"term": int(row[0].strip()), "class_code": row[1], "class_name": row[2], "class_type": row[3],
-                                   "points": row[4], "grade": self.convert_gpa_letter_to_num(row[5])})
-        return transcript
-
-    def convert_gpa_letter_to_num(self, letter_grade: str) -> int:
-        if letter_grade in self.letter.keys():
-            return self.letter[letter_grade]
+    def convert_gpa_letter_to_num(self, letter_grade: str) -> float:
+        global letter
+        if letter_grade in letter.keys():
+            return letter[letter_grade]
         else:
-            return -1
+            return -1.0
 
-
-    def get_all_info_for_term(self, transcript: list, term_num: int) -> list:
-        term_info = []
-        for cls in transcript:
-            if cls["term"] == term_num:
-                term_info.append(cls)
-        num_of_classes = len(term_info)
-        if num_of_classes > 0:
-            logging.info(f"Found {num_of_classes} classes taken during Term {term_num}")
+    def get_subject_from_class_code(self) -> str:
+        if "-" in self.class_code:
+            return self.class_code.split("-")[0]
         else:
-            logging.warning(f"No classes was found for Term {term_num}")
-        return term_info
+            return "N/A"
