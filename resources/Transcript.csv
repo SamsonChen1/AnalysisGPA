@@ -1,0 +1,40 @@
+Term,Class Code,Class Name,Class Type,Credit Amount,Grade
+1,BUSN-3200,Intro to Management,Elective,3,B+
+1,CISC-1110,Intro to programming with C++,Major,4,A
+1,CORC-1120,Intro to Study of Art,Core,3,B
+1,CORC-1210,"Knowledge, Realty & Society",Core,3,B+
+1,ENGL-1010,English 1,Core,3,B+
+2,CISC-2210,Discrete Structure,Major,3,A-
+2,CISC-3110,Advanced Programming Techniques,Major,4,B
+2,CORC-1230,"People, Power, Politics",Core,3,A-
+2,ENGL-1012,English 2,Core,3,B
+2,HNSC-1100,Intro to Health,Elective,3,C
+3,ACCT-3201,Business Law 1,Elective,3,A-
+3,CHEM-1007,Chemistry Science in Modern Life,Core,3,C+
+3,CISC-3120,Design & Implementation 1,Major,3,A
+3,CISC-3130,Data Structures,Major,4,B
+3,MATH-1201,Calculus 1,Major,4,C
+4,CISC-1050,Intro to Computer Applications,Major,3,A
+4,CISC-3150,Object-Oriented Program,Major,3,A-
+4,CISC-3665,Game Design,Major,3,B+
+4,HIST-3005,Shaping Modern World,Core,3,A-
+4,MATH-1206,Calculus 2,Major,4,B
+5,ANTH-3135,American Urban Experience,Core,3,A-
+5,ARTD-2811,Intro to Digital Art,Elective,3,A
+5,CISC-2820W,Computer & Ethnics,Major,3,A-
+5,CORC-3303,Exploring Robotics,Elective,3,A+
+5,EESC-1010,The Dynamic Earth,Core,3,A-
+5,PHYS-1331,Physics - Simple Laws,Core,3,B+
+6,CISC-3220,Analysis of Algorithm,Major,0,W
+6,CISC-3810,Database Systems,Major,3,A
+6,CISC-3310,Computer Architecture,Major,4,A-
+6,CLAS-1110,Classical Cultures,Core,3,B-
+6,MATH-2501,Elementary Probability & Statistics,Major,3,A
+7,CISC-3140,Design & Implementation 2,Major,3,B-
+7,CISC-3230,Theoretical Computer Science,Major,3,B
+7,CISC-4900,Projects 1,Major,3,A-
+7,MUSC-1300,Music Language History & Culture,Core,3,B
+8,CISC-3171,Intro to Software Engineering,Major,3,A
+8,CISC-3230,Analysis of Algorithm,Major,3,B
+8,CISC-3320,Operating Systems,Major,3,B
+8,CORC-3203,Latin@ Diasporas in the US,Core,3,A
