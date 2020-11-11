@@ -28,17 +28,20 @@ class Transcript:
                 invalid_courses.append(course)
         return valid_courses, invalid_courses
 
-    def get_total_gpa(self) -> float:
-        total_gpa = 0
-        valid_courses = self.get_courses_list()[0]
-        num_of_courses = len(valid_courses)
+    def get_total_gpa(self, course_list) -> float:
+        gpa_sum = 0
+        num_of_courses = len(course_list)
         if num_of_courses > 0:
-            for course in valid_courses:
-                total_gpa += course.get_num_grade()
-            return round(total_gpa/num_of_courses, 2)
+            for course in course_list:
+                gpa_sum += course.get_num_grade()
+            return round(gpa_sum/num_of_courses, 2)
         else:
             logging.warning("No valid courses that contains a GPA")
             return -1
+
+    def get_total_valid_gpa(self) -> float:
+        return self.get_total_gpa(self.get_courses_list()[0])
+
 
     def get_all_info_for_term(self, term_num: int) -> list:
         term_info = []
