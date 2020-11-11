@@ -25,12 +25,12 @@ class Course:
         self.class_name = class_name
         self.class_type = class_type
         self.points = points
-        self.grade = self.convert_gpa_letter_to_num(grade)
+        self.grade = grade
 
-    def convert_gpa_letter_to_num(self, letter_grade: str) -> float:
+    def get_num_grade(self) -> float:
         global letter
-        if letter_grade in letter.keys():
-            return letter[letter_grade]
+        if self.grade in letter.keys():
+            return letter[self.grade]
         else:
             return -1.0
 
@@ -39,3 +39,4 @@ class Course:
             return self.class_code.split("-")[0]
         else:
             return "N/A"
+

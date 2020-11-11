@@ -21,11 +21,11 @@ Term,Class Code,Class Name,Class Type,Credit Amount,Grade
 4,MATH-1206,Calculus 2,Major,4,B
 5,ANTH-3135,American Urban Experience,Core,3,A-
 5,ARTD-2811,Intro to Digital Art,Elective,3,A
-5,CISC-2820W,Computer & Ethnics,Major,3,A-
+5,CISC-2820W,Computer & Ethnics,Major,3,B
 5,CORC-3303,Exploring Robotics,Elective,3,A+
 5,EESC-1010,The Dynamic Earth,Core,3,A-
 5,PHYS-1331,Physics - Simple Laws,Core,3,B+
-6,CISC-3220,Analysis of Algorithm,Major,0,W
+6,CISC-3220,Analysis of Algorithm,Major,3,W
 6,CISC-3810,Database Systems,Major,3,A
 6,CISC-3310,Computer Architecture,Major,4,A-
 6,CLAS-1110,Classical Cultures,Core,3,B-
@@ -38,3 +38,4 @@ Term,Class Code,Class Name,Class Type,Credit Amount,Grade
 8,CISC-3230,Analysis of Algorithm,Major,3,B
 8,CISC-3320,Operating Systems,Major,3,B
 8,CORC-3203,Latin@ Diasporas in the US,Core,3,A
+0,MATH-1501,Elements of Statistics,Core,3,P
