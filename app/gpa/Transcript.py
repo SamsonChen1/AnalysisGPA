@@ -18,7 +18,10 @@ class Transcript:
                 transcript.append(Course(int(row[0].strip()), row[1], row[2], row[3], row[4], row[5]))
         return transcript
 
-    def get_courses_list(self) -> (list, list):
+    def get_all_courses(self) -> list:
+        return [course for course in self.transcript]
+
+    def get_split_courses(self) -> (list, list):
         valid_courses = []
         invalid_courses = []
         for course in self.transcript:
@@ -40,12 +43,11 @@ class Transcript:
             return -1
 
     def get_total_valid_gpa(self) -> float:
-        return self.get_total_gpa(self.get_courses_list()[0])
-
+        return self.get_total_gpa(self.get_split_courses()[0])
 
     def get_all_info_for_term(self, term_num: int) -> list:
         term_info = []
-        for course in self.get_courses_list()[0]:
+        for course in self.get_all_courses():
             if course.term == term_num:
                 term_info.append(course)
         num_of_classes = len(term_info)
