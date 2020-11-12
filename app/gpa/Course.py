@@ -27,7 +27,7 @@ class Course:
         self.points = points
         self.grade = grade
 
-    def get_num_grade(self) -> float:
+    def get_grade_num(self) -> float:
         global letter
         if self.grade in letter.keys():
             return letter[self.grade]

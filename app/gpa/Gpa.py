@@ -8,18 +8,20 @@ class Gpa:
         self.course_list = course_list
 
     def get_total_gpa(self) -> float:
-        courses = self.course_list
+        invalid_grades = []
         gpa_sum = 0
         num_of_valid_courses = 0
-        if len(courses) > 0:
-            for course in courses:
-                grade = course.get_num_grade()
-                if self.is_valid_gpa(grade):
+        if len(self.course_list) > 0:
+            for course in self.course_list:
+                if self.is_valid_gpa(course.grade):
                     num_of_valid_courses += 1
-                    gpa_sum += grade
+                    gpa_sum += course.get_grade_num()
+                else:
+                    invalid_grades.append(course.grade)
             if num_of_valid_courses > 0:
                 return round(gpa_sum/num_of_valid_courses, 2)
-        logging.warning("No valid courses that contains a GPA")
+        logging.warning("No valid courses that contains a GPA{}"
+                        .format((".  Grades Passed In: " + ", ".join(invalid_grades)) if len(invalid_grades) > 0 else ""))
         return -1
 
     @staticmethod
