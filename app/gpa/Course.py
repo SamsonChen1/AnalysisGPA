@@ -19,13 +19,13 @@ letter = {
 }
 
 class Course:
-    def __init__(self, term, class_code, class_name, class_type, points, grade):
-        self.term = term
-        self.class_code = class_code
-        self.class_name = class_name
-        self.class_type = class_type
-        self.points = points
-        self.grade = grade
+    def __init__(self, term, class_code, class_name, class_type, credits, grade):
+        self.term: int = term
+        self.class_code: str = class_code
+        self.class_name: str = class_name
+        self.class_type: str = class_type
+        self.credits: int = credits
+        self.grade: str = grade
 
     def get_grade_num(self) -> float:
         global letter

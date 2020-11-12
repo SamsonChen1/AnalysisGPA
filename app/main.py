@@ -4,8 +4,9 @@ from app.gpa.Gpa import Gpa
 
 def main():
     tran_obj = Transcript("C:\\Users\\Samson\\PycharmProjects\\AnalysisGpa\\resources\\Transcript.csv")
-    gpa_obj = Gpa(tran_obj.get_all_courses())
-    print(f"total gpa {gpa_obj.get_total_gpa()}")
+    for x in range(1, 9):
+        gpa_obj = Gpa(tran_obj.get_all_info_for_term(x))
+        print(f"term {x}: total gpa {gpa_obj.get_total_gpa()}")
 
 if __name__ == "__main__":
     main()

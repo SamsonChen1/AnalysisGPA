@@ -16,7 +16,7 @@ class Transcript:
             csv_content = csv.reader(f)
             next(f)     #skips the header of the transcript
             for row in csv_content:
-                transcript.append(Course(int(row[0].strip()), row[1], row[2], row[3], row[4], row[5]))
+                transcript.append(Course(int(row[0].strip()), row[1], row[2], row[3], int(row[4]), row[5]))
         return transcript
 
     def get_all_courses(self) -> list:
@@ -31,10 +31,6 @@ class Transcript:
             else:
                 invalid_courses.append(course)
         return valid_courses, invalid_courses
-
-    def get_total_valid_gpa(self) -> float:
-        gpa = Gpa(self.get_split_courses()[0])
-        return gpa.get_total_gpa()
 
     def get_all_info_for_term(self, term_num: int) -> list:
         term_info = []
