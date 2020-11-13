@@ -20,9 +20,6 @@ class Transcript:
         logging.info(f"Extracted {len(transcript)} course(s) from the transcript")
         return transcript
 
-    def get_all_courses(self) -> list:
-        return [course for course in self.transcript]
-
     def get_latest_term_num(self) -> int:
         term = -1
         for course in self.transcript:
