@@ -1,7 +1,6 @@
 import csv
 import logging
-from app.gpa.Course import Course, letter
-from app.gpa.Gpa import Gpa
+from app.gpa.Course import Course
 
 logging.basicConfig(format='%(asctime)-15s:  %(message)s', level=logging.INFO)
 

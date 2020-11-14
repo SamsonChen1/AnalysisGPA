@@ -1,5 +1,4 @@
 import logging
-from app.gpa.Course import Course, letter
 from app.gpa.Gpa import Gpa
 from app.gpa.Transcript import Transcript
 

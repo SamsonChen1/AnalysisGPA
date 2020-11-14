@@ -1,9 +1,26 @@
 import logging
-from app.gpa.Course import Course, letter
 
 logging.basicConfig(format='%(asctime)-15s:  %(message)s', level=logging.INFO)
 
 class Gpa:
+    letter = {
+        "A+": 4.0,
+        "A": 4.0,
+        "A-": 3.7,
+        "B+": 3.3,
+        "B": 3,
+        "B-": 2.7,
+        "C+": 2.3,
+        "C": 2.0,
+        "C-": 1.7,
+        "D+": 1.3,
+        "D": 1.0,
+        "D-": .7,
+        "F": 0,
+        "WF": 0,
+        "WU": 0
+    }
+
     def __init__(self, course_list):
         self.course_list = course_list
 
@@ -26,4 +43,4 @@ class Gpa:
 
     @staticmethod
     def is_valid_gpa(gpa) -> bool:
-        return True if gpa in letter.keys() else False
+        return True if gpa in Gpa.letter.keys() else False
