@@ -26,17 +26,6 @@ class Transcript:
                 term = course.term
         return term
 
-    def get_split_courses(self) -> (list, list):
-        valid_courses = []
-        invalid_courses = []
-        for course in self.transcript:
-            if course.grade in letter:
-                valid_courses.append(course)
-            else:
-                invalid_courses.append(course)
-        logging.info(f"Count of split courses found.   Valid: {len(valid_courses)}    Invalid: {len(invalid_courses)}")
-        return valid_courses, invalid_courses
-
     def get_all_info_for_term(self, term_num: int) -> list:
         term_info = []
         for course in self.transcript:
@@ -57,7 +46,7 @@ class Transcript:
             else:
                 attr_value = course.__getattribute__(attr)
             if attr_value in split_course.keys():
-                logging.info(f"Appending course {course.class_code} to the dict of {attr}")
+                logging.info(f"Appending course {course.class_code} to the dict of {attr_value} for {attr}")
                 split_course[attr_value].append(course)
             else:
                 logging.info(f"Adding course {course.class_code} to the dict of {attr}")
