@@ -10,6 +10,9 @@ def main():
     print("\n______Class Type GPA______")
     for key, gpa in results.get_each_class_type_gpa().items():
         print(f"Class Type ({key}): Total GPA {gpa}")
+    print("\n______Subject GPA______")
+    for key, gpa in results.get_each_subject_gpa().items():
+        print(f"Subject ({key}): Total GPA {gpa}")
 
 if __name__ == "__main__":
     main()

@@ -31,8 +31,8 @@ class Gpa:
         if len(self.course_list) > 0:
             for course in self.course_list:
                 if self.is_valid_gpa(course.grade):
-                    gpa_sum += course.get_grade_num() * float(course.credits)
-                    credit_sum += course.credits
+                    gpa_sum += course.get_grade_num() * float(course.credit)
+                    credit_sum += course.credit
                 else:
                     invalid_grades.append(course.grade)
             if credit_sum > 0:

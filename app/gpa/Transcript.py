@@ -49,15 +49,18 @@ class Transcript:
             logging.warning(f"No classes was found for Term {term_num}")
         return term_info
 
-    def split_course_by_type(self, course_list) -> dict:
-        courses_by_type = {}
+    def split_course_by_attr(self, course_list, attr) -> dict:
+        split_course = {}
         for course in course_list:
-            curr_types = courses_by_type.keys()
-            if course.class_type in curr_types:
-                logging.info(f"Appending course {course.class_code} to the dict of type {course.class_type}")
-                courses_by_type[course.class_type].append(course)
+            if attr == "class_code":
+                attr_value = course.get_subject_from_class_code()
             else:
-                logging.info(f"Adding course {course.class_code} to the dict of type {course.class_type}")
-                courses_by_type[course.class_type] = [course]
-        logging.info(f"Found {len(curr_types)} different course types. Types: {', '.join(curr_types)}")
-        return courses_by_type
+                attr_value = course.__getattribute__(attr)
+            if attr_value in split_course.keys():
+                logging.info(f"Appending course {course.class_code} to the dict of {attr}")
+                split_course[attr_value].append(course)
+            else:
+                logging.info(f"Adding course {course.class_code} to the dict of {attr}")
+                split_course[attr_value] = [course]
+        logging.info(f"Found {len(split_course.keys())} different course types. {attr}: {', '.join(split_course.keys())}")
+        return split_course

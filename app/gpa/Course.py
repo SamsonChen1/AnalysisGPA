@@ -5,12 +5,12 @@ logging.basicConfig(format='%(asctime)-15s:  %(message)s', level=logging.INFO)
 
 
 class Course:
-    def __init__(self, term, class_code, class_name, class_type, credits, grade):
+    def __init__(self, term, class_code, class_name, class_type, credit, grade):
         self.term: int = term
         self.class_code: str = class_code
         self.class_name: str = class_name
         self.class_type: str = class_type
-        self.credits: int = credits
+        self.credit: int = credit
         self.grade: str = grade
 
     def get_grade_num(self) -> float:
@@ -25,3 +25,5 @@ class Course:
         else:
             return "N/A"
 
+    def get_attr_value(self, attr_name):
+        return getattr(self, attr_name)
