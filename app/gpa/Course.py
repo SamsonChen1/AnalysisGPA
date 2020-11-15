@@ -1,8 +1,7 @@
 import logging
 from app.gpa.Gpa import Gpa
 
-logging.basicConfig(format='%(asctime)-15s:  %(message)s', level=logging.INFO)
-
+logger = logging.getLogger(__name__)
 
 class Course:
     def __init__(self, term, class_code, class_name, class_type, credit, grade):

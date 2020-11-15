@@ -1,6 +1,6 @@
 import logging
 
-logging.basicConfig(format='%(asctime)-15s:  %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class Gpa:
     letter = {
@@ -37,7 +37,7 @@ class Gpa:
                     invalid_grades.append(course.grade)
             if credit_sum > 0:
                 return round(gpa_sum/credit_sum, 3)
-        logging.warning("No valid courses that contains a GPA{}"
+        logger.warning("No valid courses that contains a GPA{}"
                         .format((".  Grades Passed In: " + ", ".join(invalid_grades)) if len(invalid_grades) > 0 else ""))
         return -1
 

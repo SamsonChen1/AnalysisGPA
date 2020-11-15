@@ -15,4 +15,6 @@ def main():
         print(f"Subject ({key}): Total GPA {gpa}")
 
 if __name__ == "__main__":
+    import logging
+    logging.basicConfig(format='%(asctime)-15s %(name)s:  %(message)s', level=logging.WARNING)
     main()
