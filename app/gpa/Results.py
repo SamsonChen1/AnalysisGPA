@@ -31,4 +31,3 @@ class Results:
             courses_gpa = Gpa(courses)
             type_gpa[key] = courses_gpa.get_total_gpa()
         return type_gpa
-
